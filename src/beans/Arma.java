@@ -1,6 +1,5 @@
 package beans;
 
-import java.sql.Date;
 
 public class Arma {
     
@@ -10,6 +9,8 @@ public class Arma {
     private int cargador;
     private int municion;
     private String nacionalidad;
+    private String usuario;
+	private String contraseña;
     
     public String getTipo() {
         return tipo;
@@ -47,5 +48,16 @@ public class Arma {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-
+    public String getUsuario() {
+    	return usuario;
+    }
+    public void setUsuario(String Usuario) {
+    	this.usuario = Usuario;
+    }
+    public String getContraseña() {
+        return contraseña;
+    }
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
 }

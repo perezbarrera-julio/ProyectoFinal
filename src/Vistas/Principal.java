@@ -1,34 +1,27 @@
 package Vistas;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import java.awt.Label;
-import java.awt.Button;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import javax.swing.JTextPane;
-import java.awt.SystemColor;
-import javax.swing.JTextField;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import beans.Infousu;
+import modelo.Usuarios;
 
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField usuarioField;
 	private JPasswordField passwordField;
 
 	/**
@@ -38,8 +31,6 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Principal frame = new Principal();
-					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -97,10 +88,10 @@ public class Principal extends JFrame {
 					btnNewButton_1.setBounds(282, 179, 105, 36);
 					panel.add(btnNewButton_1);
 					
-					textField = new JTextField();
-					textField.setBounds(10, 91, 152, 26);
-					panel.add(textField);
-					textField.setColumns(10);
+					usuarioField = new JTextField();
+					usuarioField.setBounds(10, 91, 152, 26);
+					panel.add(usuarioField);
+					usuarioField.setColumns(10);
 					
 					JLabel Fondo = new JLabel("");
 					Fondo.setBounds(0, 0, 583, 415);
@@ -114,5 +105,7 @@ public class Principal extends JFrame {
 					fondologin.setIcon(new ImageIcon("C:\\Proyecto\\ADAITS\\Programaci\u00F3n\\ProyectoEclipse\\Proyecto\\Imag\\fodnologin.jpg"));
 					fondologin.setBounds(0, 0, 424, 269);
 					panel.add(fondologin);
+					
+					new Usuarios(null, usuarioField.getText(),passwordField.getText() ).recogerUsuarios(usuarioField.getText(),passwordField.getText());
 	}
 }

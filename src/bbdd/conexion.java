@@ -1,27 +1,29 @@
 
 package bbdd;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Julii
- */
+
 public class conexion {
 	
-    String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    String dbName = "ProyectoFinalJava";
-    String url = "jdbc:mysql://localhost:3306/" + dbName + timeZone;
-    String user = "root";
-    String pass = "06052012JPB";
-    String driver = "com.mysql.cj.jdbc.Driver";
+	static String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    static String dbName = "proyectofinaljava";
+    static String url = "jdbc:mysql://localhost:3306/" + dbName + timeZone;
+    static String user = "root";
+    static String pass = "06052012JPB";
+    static String driver = "com.mysql.cj.jdbc.Driver";
     
     static Connection conexion;
     static Statement consulta;
     static ResultSet resultado;
     
-    public void Conectar(){
+    public static void Conectar(){
     	try {
            Class.forName(driver) ;
            conexion = DriverManager.getConnection(url, user, pass);
